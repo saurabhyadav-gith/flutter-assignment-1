@@ -14,24 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  int textIndex = 0;
-
-  final List<String> textList = [
-    'What is your name ?',
-    'What is your age ?',
-    'How old are you ?',
-    'How was the flutter assignmet'
-  ];
-
-  void changeValue() {
-    setState(() {
-      textIndex += 1;
-      if (textIndex >= textList.length) {
-        textIndex = 0;
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,17 +21,7 @@ class MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Flutter Assignment 1'),
         ),
-        body: Column(
-          children: [
-            TextAssign(textList, textIndex),
-            // ChangeText(changeValue),
-            ElevatedButton(
-              onPressed: changeValue,
-              child: Text('change Text'),
-            )
-          ],
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
+        body: ChangeText(),
       ),
     );
   }
